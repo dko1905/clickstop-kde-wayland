@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-#Click on an x window to pause or resume
-#  This recursively obtains the child process tree of the whole application
-#requires xdotool, pgrep
+#requires kdotool, pgrep
 DEBUG=false
 
 children() {
@@ -30,7 +28,8 @@ else
 	exit
 fi
 
-PROC=$(xdotool selectwindow getwindowpid)
+PROC_ID=$(kdotool getactivewindow)
+PROC=$(kdotool getwindowpid "$PROC_ID")
 [ "$DEBUG" == "true" ] && echo $PROC > /dev/stderr
 CHILDREN=$(children $PROC) 
 [ "$DEBUG" == "true" ] && echo $CHILDREN > /dev/stderr
