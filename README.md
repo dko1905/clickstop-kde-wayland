@@ -1,6 +1,13 @@
-# clickstop
-Bash script that uses xdotool to send SIGSTOP and SIGCONT signals to the process tree of an application that was clicked on
+# clickstop-kde-wayland
+
+Bash script that uses kdotool to send SIGSTOP and SIGCONT signals to the process tree of the currently focussed application.
 
 ## USAGE
-	clickstop.sh pause will pause the next application you click
-	clickstop.sh resume will resume the next application you click
+
+```sh
+# pause application
+clickstop.sh pause
+# resume application
+clickstop.sh resume
+```
+
